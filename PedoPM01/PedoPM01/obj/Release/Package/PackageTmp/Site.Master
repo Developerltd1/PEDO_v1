@@ -1,0 +1,349 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PedoPM01.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - PEDO </title>
+    <asp:PlaceHolder runat="server">    </asp:PlaceHolder> 
+
+    <%-- New district popup script --%>
+    <style>
+        .modalBackground
+        {
+            background-color:black;
+            filter:alpha(opacity=90) !important;
+            opacity:0.6 ! important;
+            z-index:20;
+        }
+    .modalPopup
+    {
+        padding:20px;
+        position:relative;
+        width:450px;
+        height:66px;
+        background-color:white;
+        border:1px solid black;
+        margin-bottom:10px;
+    }</style>
+
+
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%> 
+    <link href="Content/stylesheets.css" rel="stylesheet" type="text/css" /> 
+    <link rel='stylesheet' type='text/css' href='Content/fullcalendar.print.css' media='print' />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=272931&clcid=0x409 --%>
+            <%--Framework Scripts--%>
+            
+<%--            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />--%>
+
+            <%--Site Scripts--%>
+        </Scripts>
+    </asp:ScriptManager>
+        <div  style="margin-left:1200px" >User Name: <asp:Label ID="lblUserName" runat="server" Text="Label" ></asp:Label></div>
+    <div class="header">
+        <a class="logo" href="Default.aspx"><img src="../img/pedo_logo.PNG" /> </a>
+        <h1 style="font-family:Garamond; font-weight:500;color:white; text-align:center;margin-top:20px"> PEDO Project Monitoring System  </h1> 
+       
+        <ul class="header_menu">
+            <li class="list_icon"><a href="#"></a></li>
+            
+        </ul>    
+    </div>
+   <div class="menu">      
+<%--        <div class="breadLine">            
+            <div class="arrow"></div>
+            <div class="adminControl active">
+                Hi, User
+            </div>
+        </div>   --%>     
+        <div class="admin">
+            <div class="image">
+                <img src="../img/users/user.png" class="img-polaroid"/>                
+            </div>
+            <ul class="control">                
+<%--                <li><span class="icon-comment"></span> <a href="messages.html">Messages</a> <a href="messages.html" class="caption red">12</a></li>
+                <li><span class="icon-cog"></span> <a href="forms.html">Settings</a></li>--%>
+                <li><span class="icon-share-alt"></span> <a href="login.html">Logout</a></li>
+            </ul>
+            <div class="info">
+                <span>Welcome back!</span>
+            </div>
+        </div>
+        
+        <ul class="navigation">            
+            <li class="active" id="Block_Dashbboard" runat="server">
+                <a href="~/Default.aspx" runat="server">
+                    <span class="isw-grid"></span><span class="text"  >Dashboard</span>
+                </a>
+            </li>
+            <li class="openable"  id="Block_User" runat="server">
+                <a>
+                    <span class="isw-list"></span><span class="text">Users</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="~/UserEntryForms/formUserRegistration.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">New User</span>
+                        </a>
+                    </li>         
+                      <li>
+                        <a href="~/UserEntryForms/frmTopManagement.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Add Top Management User</span>
+                        </a>
+                    </li>  
+                    <li>
+                        <a href="~/UserEntryForms/frmEditUser.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Edit User</span>
+                        </a>
+                    </li>   
+                    <li>
+                        <a href="#" runat="server">
+                            <span class="icon-th-large"></span><span class="text">Delete User</span>
+                        </a>
+                    </li>                                   
+                </ul>                
+            </li>            
+            <li class="openable"  id="Block_GMapproval" runat="server">
+                <a>
+                    <span class="isw-list"></span><span class="text">GM</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="~/GMApproval/frmGMapproval.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Approve Hydro</span>
+                        </a>
+                    </li>      
+                    <li>
+                        <a href="~/GMApproval/frmGMapproval.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Approve Solar</span>
+                        </a>
+                    </li>      
+                                   
+                </ul>      
+                 
+            </li>  
+            <li class="openable"  id="Block_Project" runat="server">
+                <a>
+                    <span class="isw-list"></span><span class="text">Projects</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="~/ProjectForms/frmNewProject.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">New Project</span>
+                        </a>
+                    </li>         
+                    <li>
+                        <a href="~/ProjectForms/frmNewUmbrellaProject.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">New Umbrella Project</span>
+                        </a>
+                    </li>   
+                    <li>
+                        <a href="ProjectForms/frmEditProject.aspx" runat="server">
+                            <span class="icon-th-large"></span><span class="text">Edit Project</span>
+                        </a>
+                    </li>                                   
+                </ul>                
+            </li>  
+            <li class="openable" id="Block_Hydro" runat="server">
+                <a href="#">
+                    <span class="isw-list"></span><span class="text"> Hydro Tasks</span>
+                </a>
+                <ul>
+                     <li id="Sub_HydroMainTask" runat="server">
+                        <a href="~/DefineTaskForms/frmNewHydroMainTask.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Hydro Workplan</span>
+                        </a>                  
+                    </li>      
+                     <li id="Update_HydroWorkPlan" runat="server">
+                        <a href="~/DefineTaskForms/frmRevisedHydroWorkPlan.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Revised Hydro Workplan</span>
+                        </a>                  
+                    </li>       
+                    <li id="Sub_Hydrosubtask" runat="server">
+                        <a href="~/SubTaskForms/frmNewSubTask.aspx"  runat="server">
+                            <span class="icon-th-large"></span><span class="text">Task Progress</span>
+                        </a>                  
+                    </li>         
+                    <li id="Update_Sub_Hydrosubtask" runat="server">
+                        <a href="~/SubTaskForms/frmUpdateSubTask.aspx"  runat="server">
+                            <span class="icon-th-large"></span><span class="text">Edit Task Progress</span>
+                        </a>                  
+                    </li>
+                     <li id="Sub_NewDefinetask" runat="server">
+                        <a href="~/DefineTaskForms/frmAddDefinedTaks.aspx"   runat="server">
+                            <span class="icon-th-large"></span><span class="text">New Defined Task</span>  <!-- only for hydropower projects -->
+                        </a>                  
+                    </li>                   
+                                                   
+                </ul>                
+            </li>
+           
+             <li class="openable" id="Block_AssociatedTask" runat="server">
+                <a href="#">
+                    <span class="isw-list"></span><span class="text"> Associated Tasks</span>
+                </a>
+                <ul>
+                     <li id="Li4" runat="server">
+                        <a href="~/DefineTaskForms/frmAssociatedTask.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Associated Task</span>
+                        </a>                  
+                    </li>      
+                                        
+                                                   
+                </ul>                
+            </li>
+                  
+
+              <li class="openable" id="Block_Finance" runat="server">
+                <a href="#">
+                    <span class="isw-list"></span><span class="text"> Financial  Progress</span>
+                </a>
+                <ul>
+                     <li id="Li2" runat="server">
+                        <a href="~/Finance/frmProjectCost.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Project Cost</span>
+                        </a>                  
+                    </li>      
+                     <li id="Li3" runat="server">
+                        <a href="~/Finance/frmProjectPayment.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Project Payment</span>
+                        </a>                  
+                    </li>                    
+                                                   
+                </ul>                
+            </li>
+
+       <li class="openable"  id="Block_Solar" runat="server">
+                <a href="#">
+                    <span class="isw-list"></span><span class="text"> Solar Tasks</span>
+                </a>
+                <ul>
+                    <li id="Sub_SolarMainsubtask" runat="server">
+                        <a href="~/DefineTaskForms/frmNewSolarMainTask.aspx"  runat="server">
+                            <span class="icon-th"></span><span class="text">Solar Work Plan</span>
+                        </a>                  
+                    </li>         
+                    <li id="Sub_Solarsubtask" runat="server">
+                        <a href="~/SubTaskForms/SolarSubTask.aspx"  runat="server">
+                            <span class="icon-th-large"></span><span class="text">Task Progress</span>
+                        </a>                  
+                    </li>
+                                        
+                                                   
+                </ul>                
+            </li>             
+
+
+
+<%--             <li class="openable" id="Block_Edit" runat="server">
+                <a href="#">
+                    <span class="isw-list"></span><span class="text">Edit</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="~/DefineTaskForms/frmEditDefTask.aspx" runat="server">
+                            <span class="icon-th"></span><span class="text">Edit Main Task</span>
+                        </a>                  
+                    </li>          
+                    <li>
+                        <a href="~/SubTaskForms/frmEditSubTask.aspx" runat="server">
+                            <span class="icon-th-large"></span><span class="text">Edit Sub Task</span>
+                        </a>                  
+                    </li>                                        
+                </ul>                
+            </li> --%>              
+           
+            <li class="openable" id="Block_Report" runat="server">
+                <a href="#">
+                    <span class="isw-zoom"></span><span class="text">Reports</span>                    
+                </a>
+                <ul>
+                    <li>
+                        <a href="~/Reports/ProjectReport.aspx" runat="server">
+                            <span class="icon-picture"></span><span class="text">Project Report</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Reports/frmMainTaskReport.aspx" runat="server">
+                            <span class="icon-pencil"></span><span class="text">Main Task Report</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Reports/frmSubTaskReport.aspx" runat="server">
+                            <span class="icon-upload"></span><span class="text">Sub Task Report</span>
+                        </a>
+                    </li> 
+                     <li>
+                        <a href="~/Reports/frm_GetProjectFinTransByPaymentDate.aspx" runat="server">
+                            <span class="icon-upload"></span><span class="text">Finance Report</span>
+                        </a>
+                    </li>                                                 
+                </ul>
+            </li>  
+            <li class="active" id="exit" runat="server">
+                <a href="~/UserEntryForms/UserLogin.aspx" runat="server">
+                    <span class="isw-lock"></span><span class="text"  >Logout</span>
+                </a>
+            </li>                        
+        </ul>
+        
+        <div class="dr"><span></span></div>
+        
+        
+    </div>
+<div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <div class="content">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </div>
+
+</div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> - PEDO </p>
+            </div>
+        </div>
+    </footer>
+    </form>
+    <script type="text/javascript" src='../Scripts/jquery-1.8.2.min.js'></script>
+    <script type="text/javascript" src='../Scripts/jquery-ui-1.8.24.min.js'></script>
+ <script type='text/javascript' src='../Scripts/plugins/jquery/jquery.mousewheel.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/cookie/jquery.cookies.2.2.0.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/bootstrap.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/charts/excanvas.min.js'></script>
+    <script type='text/javascript' src='../Scripts/plugins/charts/jquery.flot.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/charts/jquery.flot.stack.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/charts/jquery.flot.pie.js'></script>
+    <script type='text/javascript' src='../Scripts/plugins/charts/jquery.flot.resize.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/sparklines/jquery.sparkline.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/fullcalendar/fullcalendar.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/select2/select2.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/uniform/uniform.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/maskedinput/jquery.maskedinput-1.3.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/validation/languages/jquery.validationEngine-en.js' charset='utf-8'></script>
+    <script type='text/javascript' src='../Scripts/plugins/validation/jquery.validationEngine.js' charset='utf-8'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+    <script type='text/javascript' src='../Scripts/plugins/animatedprogressbar/animated_progressbar.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/qtip/jquery.qtip-1.0.0-rc3.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/cleditor/jquery.cleditor.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/dataTables/jquery.dataTables.min.js'></script>    
+    <script type='text/javascript' src='../Scripts/plugins/fancybox/jquery.fancybox.pack.js'></script>    
+    <script type='text/javascript' src='../Scripts/cookies.js'></script>
+    <script type='text/javascript' src='../Scripts/actions.js'></script>
+    <script type='text/javascript' src='../Scripts/charts.js'></script>
+    <script type='text/javascript' src='../Scripts/plugins.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,1233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5863309-CA9C-4D30-B1FC-937DC15A5615}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PedoPM01</RootNamespace>
+    <AssemblyName>PedoPM01</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.ScriptUserControl">
+      <HintPath>..\packages\AjaxControlToolkit.ScriptUserControl.18.1.1\lib\net40\AjaxControlToolkit.ScriptUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.2.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="ContentUserEntry2\css\CustomMain.css" />
+    <Content Include="ContentUserEntry2\css\main.css" />
+    <Content Include="ContentUserEntry2\css\util.css" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\OFL.txt" />
+    <Content Include="ContentUserEntry2\fonts\raleway\OFL.txt" />
+    <Content Include="ContentUserEntry2\images\avatar-01 copy.jpg" />
+    <Content Include="ContentUserEntry2\images\avatar-01.jpg" />
+    <Content Include="ContentUserEntry2\images\icons\favicon.ico" />
+    <Content Include="ContentUserEntry2\images\icons\icon-google.png" />
+    <Content Include="ContentUserEntry2\images\img-01.jpg" />
+    <Content Include="ContentUserEntry2\images\img-01OK.JPG" />
+    <Content Include="ContentUserEntry2\images\img-01OOK.JPG" />
+    <Content Include="ContentUserEntry2\images\SSS\Characters-of-people-holding-green-energy-icons\43066.jpg" />
+    <Content Include="ContentUserEntry2\images\SSS\Characters-of-people-holding-green-energy-icons\License free.txt" />
+    <Content Include="ContentUserEntry2\images\SSS\Characters-of-people-holding-green-energy-icons\License premium.txt" />
+    <Content Include="ContentUserEntry2\images\SSS\Green-city-infographic-environmental-conservation-vector\61939.jpg" />
+    <Content Include="ContentUserEntry2\images\SSS\Green-city-infographic-environmental-conservation-vector\License free.txt" />
+    <Content Include="ContentUserEntry2\images\SSS\Green-city-infographic-environmental-conservation-vector\License premium.txt" />
+    <Content Include="ContentUserEntry2\images\SSS\Waterfall-Landscapes-2x2-Design-Concept\12094.jpg" />
+    <Content Include="ContentUserEntry2\images\SSS\Waterfall-Landscapes-2x2-Design-Concept\License free.txt" />
+    <Content Include="ContentUserEntry2\images\SSS\Waterfall-Landscapes-2x2-Design-Concept\License premium.txt" />
+    <Content Include="ContentUserEntry2\index.html" />
+    <Content Include="ContentUserEntry2\js\main.js" />
+    <Content Include="ContentUserEntry2\vendor\animate\animate.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\js\popper.js" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="ContentUserEntry2\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="ContentUserEntry2\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="ContentUserEntry2\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="ContentUserEntry2\vendor\select2\select2.css" />
+    <Content Include="ContentUserEntry2\vendor\select2\select2.js" />
+    <Content Include="ContentUserEntry2\vendor\select2\select2.min.css" />
+    <Content Include="ContentUserEntry2\vendor\select2\select2.min.js" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\cleditor.css" />
+    <Content Include="Content\elfinder.css" />
+    <Content Include="Content\elfinder.min.css" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\icomoon\icomoon.svg" />
+    <Content Include="Content\icons.css" />
+    <Content Include="Content\ie7.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\mCustomScrollbar.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\stylesheet.css" />
+    <Content Include="Content\stylesheets.css" />
+    <Content Include="Content\ui.css" />
+    <Content Include="Content\uniform.default.css" />
+    <Content Include="Content\validation.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DefineTaskForms\frmAddDefinedTaks.aspx" />
+    <Content Include="DefineTaskForms\frmAssociatedTask.aspx" />
+    <Content Include="DefineTaskForms\frmEditDefTask.aspx" />
+    <Content Include="DefineTaskForms\frmRevisedHydroWorkPlan.aspx" />
+    <Content Include="Finance\frmProjectCost.aspx" />
+    <Content Include="Finance\frmProjectPayment.aspx" />
+    <Content Include="GMApproval\frmGMapproval.aspx" />
+    <Content Include="DefineTaskForms\frmNewHydroMainTask.aspx" />
+    <Content Include="DefineTaskForms\frmNewSolarMainTask.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="forms.html" />
+    <Content Include="Global.asax" />
+    <Content Include="img\admin_wave.png" />
+    <Content Include="img\arrow-top.png" />
+    <Content Include="img\arrow.png" />
+    <Content Include="img\arrow_down.png" />
+    <Content Include="img\arrow_up.png" />
+    <Content Include="img\backgrounds\body.jpg" />
+    <Content Include="img\backgrounds\box-head-active.jpg" />
+    <Content Include="img\backgrounds\box-head.jpg" />
+    <Content Include="img\backgrounds\divider.png" />
+    <Content Include="img\backgrounds\divider_span.png" />
+    <Content Include="img\backgrounds\header.jpg" />
+    <Content Include="img\backgrounds\menu-item-active.jpg" />
+    <Content Include="img\backgrounds\menu-item.jpg" />
+    <Content Include="img\backgrounds\menu.jpg" />
+    <Content Include="img\backgrounds\nav.jpg" />
+    <Content Include="img\calender.png" />
+    <Content Include="img\cfp_logo.png" />
+    <Content Include="img\checkbox\bg-input-focus.png" />
+    <Content Include="img\checkbox\bg-input.png" />
+    <Content Include="img\checkbox\sprite.png" />
+    <Content Include="img\cleditor\buttons.gif" />
+    <Content Include="img\cleditor\toolbar.gif" />
+    <Content Include="img\icons\datatable\sort_asc.png" />
+    <Content Include="img\icons\datatable\sort_asc_disabled.png" />
+    <Content Include="img\icons\datatable\sort_both.png" />
+    <Content Include="img\icons\datatable\sort_desc.png" />
+    <Content Include="img\icons\datatable\sort_desc_disabled.png" />
+    <Content Include="img\elfinder\arrows-active.png" />
+    <Content Include="img\elfinder\arrows-normal.png" />
+    <Content Include="img\elfinder\crop.gif" />
+    <Content Include="img\elfinder\dialogs.png" />
+    <Content Include="img\elfinder\icons-big.png" />
+    <Content Include="img\elfinder\icons-small.png" />
+    <Content Include="img\elfinder\progress.gif" />
+    <Content Include="img\elfinder\quicklook-bg.png" />
+    <Content Include="img\elfinder\quicklook-icons.png" />
+    <Content Include="img\elfinder\resize.png" />
+    <Content Include="img\elfinder\spinner-mini.gif" />
+    <Content Include="img\elfinder\toolbar.png" />
+    <Content Include="img\example.jpg" />
+    <Content Include="img\example_full.jpg" />
+    <Content Include="img\example_mini.jpg" />
+    <Content Include="img\example_xmini.jpg" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\header_menu_list.png" />
+    <Content Include="img\icons\bb\ic_archive.png" />
+    <Content Include="img\icons\bb\ic_attachment.png" />
+    <Content Include="img\icons\bb\ic_bookmark.png" />
+    <Content Include="img\icons\bb\ic_brush.png" />
+    <Content Include="img\icons\bb\ic_calc.png" />
+    <Content Include="img\icons\bb\ic_calendar.png" />
+    <Content Include="img\icons\bb\ic_cancel.png" />
+    <Content Include="img\icons\bb\ic_chat.png" />
+    <Content Include="img\icons\bb\ic_chats.png" />
+    <Content Include="img\icons\bb\ic_cloud.png" />
+    <Content Include="img\icons\bb\ic_delete.png" />
+    <Content Include="img\icons\bb\ic_documents.png" />
+    <Content Include="img\icons\bb\ic_down.png" />
+    <Content Include="img\icons\bb\ic_download.png" />
+    <Content Include="img\icons\bb\ic_down_circle.png" />
+    <Content Include="img\icons\bb\ic_edit.png" />
+    <Content Include="img\icons\bb\ic_empty_document.png" />
+    <Content Include="img\icons\bb\ic_favorite.png" />
+    <Content Include="img\icons\bb\ic_folder.png" />
+    <Content Include="img\icons\bb\ic_fullscreen.png" />
+    <Content Include="img\icons\bb\ic_graph.png" />
+    <Content Include="img\icons\bb\ic_grid.png" />
+    <Content Include="img\icons\bb\ic_left.png" />
+    <Content Include="img\icons\bb\ic_left_circle.png" />
+    <Content Include="img\icons\bb\ic_list.png" />
+    <Content Include="img\icons\bb\ic_lock.png" />
+    <Content Include="img\icons\bb\ic_mail.png" />
+    <Content Include="img\icons\bb\ic_minus.png" />
+    <Content Include="img\icons\bb\ic_ok.png" />
+    <Content Include="img\icons\bb\ic_picture.png" />
+    <Content Include="img\icons\bb\ic_pin.png" />
+    <Content Include="img\icons\bb\ic_plus.png" />
+    <Content Include="img\icons\bb\ic_power.png" />
+    <Content Include="img\icons\bb\ic_print.png" />
+    <Content Include="img\icons\bb\ic_refresh.png" />
+    <Content Include="img\icons\bb\ic_right.png" />
+    <Content Include="img\icons\bb\ic_right_circle.png" />
+    <Content Include="img\icons\bb\ic_settings.png" />
+    <Content Include="img\icons\bb\ic_sound.png" />
+    <Content Include="img\icons\bb\ic_sync.png" />
+    <Content Include="img\icons\bb\ic_tag.png" />
+    <Content Include="img\icons\bb\ic_target.png" />
+    <Content Include="img\icons\bb\ic_text_document.png" />
+    <Content Include="img\icons\bb\ic_time.png" />
+    <Content Include="img\icons\bb\ic_unlock.png" />
+    <Content Include="img\icons\bb\ic_up.png" />
+    <Content Include="img\icons\bb\ic_up_circle.png" />
+    <Content Include="img\icons\bb\ic_user.png" />
+    <Content Include="img\icons\bb\ic_users.png" />
+    <Content Include="img\icons\bb\ic_zoom.png" />
+    <Content Include="img\icons\bs\ic_archive.png" />
+    <Content Include="img\icons\bs\ic_attachment.png" />
+    <Content Include="img\icons\bs\ic_bookmark.png" />
+    <Content Include="img\icons\bs\ic_brush.png" />
+    <Content Include="img\icons\bs\ic_calc.png" />
+    <Content Include="img\icons\bs\ic_calendar.png" />
+    <Content Include="img\icons\bs\ic_cancel.png" />
+    <Content Include="img\icons\bs\ic_chat.png" />
+    <Content Include="img\icons\bs\ic_chats.png" />
+    <Content Include="img\icons\bs\ic_cloud.png" />
+    <Content Include="img\icons\bs\ic_delete.png" />
+    <Content Include="img\icons\bs\ic_documents.png" />
+    <Content Include="img\icons\bs\ic_down.png" />
+    <Content Include="img\icons\bs\ic_download.png" />
+    <Content Include="img\icons\bs\ic_down_circle.png" />
+    <Content Include="img\icons\bs\ic_edit.png" />
+    <Content Include="img\icons\bs\ic_empty_document.png" />
+    <Content Include="img\icons\bs\ic_favorite.png" />
+    <Content Include="img\icons\bs\ic_folder.png" />
+    <Content Include="img\icons\bs\ic_fullscreen.png" />
+    <Content Include="img\icons\bs\ic_graph.png" />
+    <Content Include="img\icons\bs\ic_grid.png" />
+    <Content Include="img\icons\bs\ic_left.png" />
+    <Content Include="img\icons\bs\ic_left_circle.png" />
+    <Content Include="img\icons\bs\ic_list.png" />
+    <Content Include="img\icons\bs\ic_lock.png" />
+    <Content Include="img\icons\bs\ic_mail.png" />
+    <Content Include="img\icons\bs\ic_minus.png" />
+    <Content Include="img\icons\bs\ic_ok.png" />
+    <Content Include="img\icons\bs\ic_picture.png" />
+    <Content Include="img\icons\bs\ic_pin.png" />
+    <Content Include="img\icons\bs\ic_plus.png" />
+    <Content Include="img\icons\bs\ic_power.png" />
+    <Content Include="img\icons\bs\ic_print.png" />
+    <Content Include="img\icons\bs\ic_refresh.png" />
+    <Content Include="img\icons\bs\ic_right.png" />
+    <Content Include="img\icons\bs\ic_right_circle.png" />
+    <Content Include="img\icons\bs\ic_settings.png" />
+    <Content Include="img\icons\bs\ic_sound.png" />
+    <Content Include="img\icons\bs\ic_sync.png" />
+    <Content Include="img\icons\bs\ic_tag.png" />
+    <Content Include="img\icons\bs\ic_target.png" />
+    <Content Include="img\icons\bs\ic_text_document.png" />
+    <Content Include="img\icons\bs\ic_time.png" />
+    <Content Include="img\icons\bs\ic_unlock.png" />
+    <Content Include="img\icons\bs\ic_up.png" />
+    <Content Include="img\icons\bs\ic_up_circle.png" />
+    <Content Include="img\icons\bs\ic_user.png" />
+    <Content Include="img\icons\bs\ic_users.png" />
+    <Content Include="img\icons\bs\ic_zoom.png" />
+    <Content Include="img\icons\wb\ic_archive.png" />
+    <Content Include="img\icons\wb\ic_attachment.png" />
+    <Content Include="img\icons\wb\ic_bookmark.png" />
+    <Content Include="img\icons\wb\ic_brush.png" />
+    <Content Include="img\icons\wb\ic_calc.png" />
+    <Content Include="img\icons\wb\ic_calendar.png" />
+    <Content Include="img\icons\wb\ic_cancel.png" />
+    <Content Include="img\icons\wb\ic_chat.png" />
+    <Content Include="img\icons\wb\ic_chats.png" />
+    <Content Include="img\icons\wb\ic_cloud.png" />
+    <Content Include="img\icons\wb\ic_delete.png" />
+    <Content Include="img\icons\wb\ic_documents.png" />
+    <Content Include="img\icons\wb\ic_down.png" />
+    <Content Include="img\icons\wb\ic_download.png" />
+    <Content Include="img\icons\wb\ic_down_circle.png" />
+    <Content Include="img\icons\wb\ic_edit.png" />
+    <Content Include="img\icons\wb\ic_empty_document.png" />
+    <Content Include="img\icons\wb\ic_favorite.png" />
+    <Content Include="img\icons\wb\ic_folder.png" />
+    <Content Include="img\icons\wb\ic_fullscreen.png" />
+    <Content Include="img\icons\wb\ic_graph.png" />
+    <Content Include="img\icons\wb\ic_grid.png" />
+    <Content Include="img\icons\wb\ic_left.png" />
+    <Content Include="img\icons\wb\ic_left_circle.png" />
+    <Content Include="img\icons\wb\ic_list.png" />
+    <Content Include="img\icons\wb\ic_lock.png" />
+    <Content Include="img\icons\wb\ic_mail.png" />
+    <Content Include="img\icons\wb\ic_minus.png" />
+    <Content Include="img\icons\wb\ic_ok.png" />
+    <Content Include="img\icons\wb\ic_picture.png" />
+    <Content Include="img\icons\wb\ic_pin.png" />
+    <Content Include="img\icons\wb\ic_plus.png" />
+    <Content Include="img\icons\wb\ic_power.png" />
+    <Content Include="img\icons\wb\ic_print.png" />
+    <Content Include="img\icons\wb\ic_refresh.png" />
+    <Content Include="img\icons\wb\ic_right.png" />
+    <Content Include="img\icons\wb\ic_right_circle.png" />
+    <Content Include="img\icons\wb\ic_settings.png" />
+    <Content Include="img\icons\wb\ic_sound.png" />
+    <Content Include="img\icons\wb\ic_sync.png" />
+    <Content Include="img\icons\wb\ic_tag.png" />
+    <Content Include="img\icons\wb\ic_target.png" />
+    <Content Include="img\icons\wb\ic_text_document.png" />
+    <Content Include="img\icons\wb\ic_time.png" />
+    <Content Include="img\icons\wb\ic_unlock.png" />
+    <Content Include="img\icons\wb\ic_up.png" />
+    <Content Include="img\icons\wb\ic_up_circle.png" />
+    <Content Include="img\icons\wb\ic_user.png" />
+    <Content Include="img\icons\wb\ic_users.png" />
+    <Content Include="img\icons\wb\ic_zoom.png" />
+    <Content Include="img\icons\ws\ic_archive.png" />
+    <Content Include="img\icons\ws\ic_attachment.png" />
+    <Content Include="img\icons\ws\ic_bookmark.png" />
+    <Content Include="img\icons\ws\ic_brush.png" />
+    <Content Include="img\icons\ws\ic_calc.png" />
+    <Content Include="img\icons\ws\ic_calendar.png" />
+    <Content Include="img\icons\ws\ic_cancel.png" />
+    <Content Include="img\icons\ws\ic_chat.png" />
+    <Content Include="img\icons\ws\ic_chats.png" />
+    <Content Include="img\icons\ws\ic_cloud.png" />
+    <Content Include="img\icons\ws\ic_delete.png" />
+    <Content Include="img\icons\ws\ic_documents.png" />
+    <Content Include="img\icons\ws\ic_down.png" />
+    <Content Include="img\icons\ws\ic_download.png" />
+    <Content Include="img\icons\ws\ic_down_circle.png" />
+    <Content Include="img\icons\ws\ic_edit.png" />
+    <Content Include="img\icons\ws\ic_empty_document.png" />
+    <Content Include="img\icons\ws\ic_favorite.png" />
+    <Content Include="img\icons\ws\ic_folder.png" />
+    <Content Include="img\icons\ws\ic_fullscreen.png" />
+    <Content Include="img\icons\ws\ic_graph.png" />
+    <Content Include="img\icons\ws\ic_grid.png" />
+    <Content Include="img\icons\ws\ic_left.png" />
+    <Content Include="img\icons\ws\ic_left_circle.png" />
+    <Content Include="img\icons\ws\ic_list.png" />
+    <Content Include="img\icons\ws\ic_lock.png" />
+    <Content Include="img\icons\ws\ic_mail.png" />
+    <Content Include="img\icons\ws\ic_minus.png" />
+    <Content Include="img\icons\ws\ic_ok.png" />
+    <Content Include="img\icons\ws\ic_picture.png" />
+    <Content Include="img\icons\ws\ic_pin.png" />
+    <Content Include="img\icons\ws\ic_plus.png" />
+    <Content Include="img\icons\ws\ic_power.png" />
+    <Content Include="img\icons\ws\ic_print.png" />
+    <Content Include="img\icons\ws\ic_refresh.png" />
+    <Content Include="img\icons\ws\ic_right.png" />
+    <Content Include="img\icons\ws\ic_right_circle.png" />
+    <Content Include="img\icons\ws\ic_settings.png" />
+    <Content Include="img\icons\ws\ic_sound.png" />
+    <Content Include="img\icons\ws\ic_sync.png" />
+    <Content Include="img\icons\ws\ic_tag.png" />
+    <Content Include="img\icons\ws\ic_target.png" />
+    <Content Include="img\icons\ws\ic_text_document.png" />
+    <Content Include="img\icons\ws\ic_time.png" />
+    <Content Include="img\icons\ws\ic_unlock.png" />
+    <Content Include="img\icons\ws\ic_up.png" />
+    <Content Include="img\icons\ws\ic_up_circle.png" />
+    <Content Include="img\icons\ws\ic_user.png" />
+    <Content Include="img\icons\ws\ic_users.png" />
+    <Content Include="img\icons\ws\ic_zoom.png" />
+    <Content Include="img\loaders\c_loader.gif" />
+    <Content Include="img\loaders\c_loader_bw.gif" />
+    <Content Include="img\loaders\c_loader_ge.gif" />
+    <Content Include="img\loaders\c_loader_gr.gif" />
+    <Content Include="img\loaders\c_loader_re.gif" />
+    <Content Include="img\loaders\c_loader_wh.gif" />
+    <Content Include="img\loaders\c_loader_ye.gif" />
+    <Content Include="img\loaders\loader.gif" />
+    <Content Include="img\loaders\loader_bw.gif" />
+    <Content Include="img\loaders\loader_ge.gif" />
+    <Content Include="img\loaders\loader_gr.gif" />
+    <Content Include="img\loaders\loader_re.gif" />
+    <Content Include="img\loaders\loader_wh.gif" />
+    <Content Include="img\loaders\loader_ye.gif" />
+    <Content Include="img\loaders\s_loader.gif" />
+    <Content Include="img\loaders\s_loader_bw.gif" />
+    <Content Include="img\loaders\s_loader_ge.gif" />
+    <Content Include="img\loaders\s_loader_gr.gif" />
+    <Content Include="img\loaders\s_loader_re.gif" />
+    <Content Include="img\loaders\s_loader_wh.gif" />
+    <Content Include="img\loaders\s_loader_ye.gif" />
+    <Content Include="img\loaders\w_loader.gif" />
+    <Content Include="img\loaders\w_loader_bw.gif" />
+    <Content Include="img\loaders\w_loader_ge.gif" />
+    <Content Include="img\loaders\w_loader_gr.gif" />
+    <Content Include="img\loaders\w_loader_re.gif" />
+    <Content Include="img\loaders\w_loader_wh.gif" />
+    <Content Include="img\loaders\w_loader_ye.gif" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\menu-arrow-down.png" />
+    <Content Include="img\menu-arrow-right.png" />
+    <Content Include="img\menu-arrow-top.png" />
+    <Content Include="img\menu_arrow_down.png" />
+    <Content Include="img\menu_arrow_up.png" />
+    <Content Include="img\no-image50.jpg" />
+    <Content Include="img\pedo_logo.PNG" />
+    <Content Include="img\select2\select2.png" />
+    <Content Include="img\select2\select2x2.png" />
+    <Content Include="img\select2\spinner.gif" />
+    <Content Include="img\textarea_top_arrow.png" />
+    <Content Include="img\ui\dateArrows.png" />
+    <Content Include="img\ui\handle.png" />
+    <Content Include="img\ui\pageOverlay.png" />
+    <Content Include="img\ui\pboverlay.png" />
+    <Content Include="img\ui\progress.png" />
+    <Content Include="img\ui\slider.png" />
+    <Content Include="img\ui\spinner.png" />
+    <Content Include="img\ui\triangles.png" />
+    <Content Include="img\ui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="img\ui\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="img\ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="img\ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="img\ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="img\ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="img\ui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="img\ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="img\ui\ui-icons_222222_256x240.png" />
+    <Content Include="img\ui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="img\ui\ui-icons_454545_256x240.png" />
+    <Content Include="img\ui\ui-icons_888888_256x240.png" />
+    <Content Include="img\ui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="img\users\alexander.jpg" />
+    <Content Include="img\users\alexander_s.jpg" />
+    <Content Include="img\users\alexey.jpg" />
+    <Content Include="img\users\alexey_s.jpg" />
+    <Content Include="img\users\aqvatarius.jpg" />
+    <Content Include="img\users\aqvatarius_s.jpg" />
+    <Content Include="img\users\dmitry.jpg" />
+    <Content Include="img\users\dmitry_s.jpg" />
+    <Content Include="img\users\helen.jpg" />
+    <Content Include="img\users\helen_s.jpg" />
+    <Content Include="img\users\olga.jpg" />
+    <Content Include="img\users\olga_s.jpg" />
+    <Content Include="img\users\user.png" />
+    <Content Include="img\users\user_profile.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="Content\icomoon\icomoon.eot" />
+    <Content Include="Content\icomoon\icomoon.ttf" />
+    <Content Include="Content\icomoon\icomoon.woff" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="ContentUserEntry2\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="ContentUserEntry2\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="ContentUserEntry2\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="ContentUserEntry2\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="ContentUserEntry2\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="ContentUserEntry2\images\img-01 copy copy.PSD" />
+    <Content Include="ContentUserEntry2\images\SSS\Characters-of-people-holding-green-energy-icons.zip" />
+    <Content Include="ContentUserEntry2\images\SSS\Characters-of-people-holding-green-energy-icons\43066.eps" />
+    <Content Include="ContentUserEntry2\images\SSS\Green-city-infographic-environmental-conservation-vector.zip" />
+    <Content Include="ContentUserEntry2\images\SSS\Green-city-infographic-environmental-conservation-vector\61939.eps" />
+    <Content Include="ContentUserEntry2\images\SSS\Waterfall-Landscapes-2x2-Design-Concept.zip" />
+    <Content Include="ContentUserEntry2\images\SSS\Waterfall-Landscapes-2x2-Design-Concept\12094.eps" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="ContentUserEntry2\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="PedoDBDataSetProject.xsc">
+      <DependentUpon>PedoDBDataSetProject.xsd</DependentUpon>
+    </Content>
+    <Content Include="PedoDBDataSetMainTask.xsc">
+      <DependentUpon>PedoDBDataSetMainTask.xsd</DependentUpon>
+    </Content>
+    <Fakes Include="Fakes\Microsoft.ReportViewer.WebForms.fakes" />
+    <None Include="PedoDBDataSetMainTask.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PedoDBDataSetMainTask.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PedoDBDataSetMainTask.xss">
+      <DependentUpon>PedoDBDataSetMainTask.xsd</DependentUpon>
+    </Content>
+    <None Include="PedoDBDataSetProject.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PedoDBDataSetProject.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PedoDBDataSetProject.xss">
+      <DependentUpon>PedoDBDataSetProject.xsd</DependentUpon>
+    </Content>
+    <Content Include="PedoDBDataSetSubTask.xsc">
+      <DependentUpon>PedoDBDataSetSubTask.xsd</DependentUpon>
+    </Content>
+    <None Include="PedoDBDataSetSubTask.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PedoDBDataSetSubTask.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PedoDBDataSetSubTask.xss">
+      <DependentUpon>PedoDBDataSetSubTask.xsd</DependentUpon>
+    </Content>
+    <Content Include="PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xsc">
+      <DependentUpon>PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xsd</DependentUpon>
+    </Content>
+    <None Include="PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PedoDBDataSet_GetProjectFinTransBy_PaymentDate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xss">
+      <DependentUpon>PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="ProjectForms\frmDelProject.aspx" />
+    <Content Include="ProjectForms\frmEditProject.aspx" />
+    <Content Include="ProjectForms\frmNewProject.aspx" />
+    <Content Include="ProjectForms\frmNewUmbrellaProject.aspx" />
+    <Content Include="Reports\frmMainTaskReport.aspx" />
+    <Content Include="Reports\frmSubTaskReport.aspx" />
+    <Content Include="Reports\frm_GetProjectFinTransByPaymentDate.aspx" />
+    <Content Include="Reports\ProjectReport.aspx" />
+    <Content Include="Scripts\actions.js" />
+    <Content Include="Scripts\calendar-en.min.js" />
+    <Content Include="Scripts\charts.js" />
+    <Content Include="Scripts\cookies.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.dynDateTime.min.js" />
+    <Content Include="Scripts\mail.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\plugins.js" />
+    <Content Include="Scripts\plugins\animatedprogressbar\animated_progressbar.js" />
+    <Content Include="Scripts\plugins\bootstrap.min.js" />
+    <Content Include="Scripts\plugins\charts\excanvas.min.js" />
+    <Content Include="Scripts\plugins\charts\jquery.colorhelpers.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.image.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.navigate.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.pie.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.resize.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.selection.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.stack.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.symbol.js" />
+    <Content Include="Scripts\plugins\charts\jquery.flot.threshold.js" />
+    <Content Include="Scripts\plugins\cleditor\jquery.cleditor.js" />
+    <Content Include="Scripts\plugins\cookie\jquery.cookies.2.2.0.min.js" />
+    <Content Include="Scripts\plugins\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\plugins\elfinder\elfinder.min.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.ar.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.bg.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.ca.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.cs.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.de.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.es.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.fr.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.hu.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.jp.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.LANG.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.nl.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.no.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.pl.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.pt_BR.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.ru.js" />
+    <Content Include="Scripts\plugins\elfinder\i18n\elfinder.zh_CN.js" />
+    <Content Include="Scripts\plugins\elfinder\proxy\elFinderSupportVer1.js" />
+    <Content Include="Scripts\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\plugins\jquery\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\plugins\maskedinput\jquery.maskedinput-1.3.min.js" />
+    <Content Include="Scripts\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\cs.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\da.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\de.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\el.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\es.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\et.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\fa.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\fi.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\fr-ca.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\fr.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\hr.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\hu.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\it.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\ja.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\ko.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\lv.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\nl.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\pl.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\pt-br.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\ro.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\ru.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\sr.js" />
+    <Content Include="Scripts\plugins\plupload\i18n\sv.js" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Scripts\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Scripts\plugins\plupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Scripts\plugins\plupload\jquery.ui.plupload\img\plupload-bw.png" />
+    <Content Include="Scripts\plugins\plupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Scripts\plugins\plupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.browserplus.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.flash.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.flash.swf" />
+    <Content Include="Scripts\plugins\plupload\plupload.full.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.gears.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.html4.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.html5.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.silverlight.js" />
+    <Content Include="Scripts\plugins\plupload\plupload.silverlight.xap" />
+    <Content Include="Scripts\plugins\qtip\jquery.qtip-1.0.0-rc3.min.js" />
+    <Content Include="Scripts\plugins\select2\select2.min.js" />
+    <Content Include="Scripts\plugins\sparklines\jquery.sparkline.min.js" />
+    <Content Include="Scripts\plugins\uniform\uniform.js" />
+    <Content Include="Scripts\plugins\validation\jquery.validationEngine.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-cz.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-da.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-de.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-en.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-es.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-et.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-fa.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-fi.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-fr.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-hr.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-hu.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-it.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-ja.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-nl.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-pl.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-pt.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-ro.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-ru.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-se.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-tr.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-vi.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Scripts\plugins\validation\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Styles\calendar-blue.css" />
+    <Content Include="SubTaskForms\frmUpdateSubTask.aspx" />
+    <Content Include="SubTaskForms\frmNewSubTask.aspx" />
+    <Content Include="SubTaskForms\SolarSubTask.aspx" />
+    <Content Include="UserEntryForms\formUserRegistration.aspx" />
+    <Content Include="UserEntryForms\frmEditUser.aspx" />
+    <Content Include="UserEntryForms\frmTopManagement.aspx" />
+    <Content Include="UserEntryForms\UserLogin.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="UserEntryForms\UserEntryMaster.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\ManageAssociatedTask.cs" />
+    <Compile Include="Classes\ManageDistricts.cs" />
+    <Compile Include="Classes\ManageFinance.cs" />
+    <Compile Include="Classes\ManageMainTask.cs" />
+    <Compile Include="Classes\ManageProject.cs" />
+    <Compile Include="Classes\ManageSolarSubTask.cs" />
+    <Compile Include="Classes\ManageSubTask.cs" />
+    <Compile Include="Classes\MngCharts.cs" />
+    <Compile Include="Classes\MngReports.cs" />
+    <Compile Include="Classes\MngUser.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmAddDefinedTaks.aspx.cs">
+      <DependentUpon>frmAddDefinedTaks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmAddDefinedTaks.aspx.designer.cs">
+      <DependentUpon>frmAddDefinedTaks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmAssociatedTask.aspx.cs">
+      <DependentUpon>frmAssociatedTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmAssociatedTask.aspx.designer.cs">
+      <DependentUpon>frmAssociatedTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmEditDefTask.aspx.cs">
+      <DependentUpon>frmEditDefTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmEditDefTask.aspx.designer.cs">
+      <DependentUpon>frmEditDefTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmRevisedHydroWorkPlan.aspx.cs">
+      <DependentUpon>frmRevisedHydroWorkPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmRevisedHydroWorkPlan.aspx.designer.cs">
+      <DependentUpon>frmRevisedHydroWorkPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmProjectCost.aspx.cs">
+      <DependentUpon>frmProjectCost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Finance\frmProjectCost.aspx.designer.cs">
+      <DependentUpon>frmProjectCost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmProjectPayment.aspx.cs">
+      <DependentUpon>frmProjectPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Finance\frmProjectPayment.aspx.designer.cs">
+      <DependentUpon>frmProjectPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GMApproval\frmGMapproval.aspx.cs">
+      <DependentUpon>frmGMapproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GMApproval\frmGMapproval.aspx.designer.cs">
+      <DependentUpon>frmGMapproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmNewHydroMainTask.aspx.cs">
+      <DependentUpon>frmNewHydroMainTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmNewHydroMainTask.aspx.designer.cs">
+      <DependentUpon>frmNewHydroMainTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmNewSolarMainTask.aspx.cs">
+      <DependentUpon>frmNewSolarMainTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineTaskForms\frmNewSolarMainTask.aspx.designer.cs">
+      <DependentUpon>frmNewSolarMainTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PedoDBDataSetMainTask.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PedoDBDataSetMainTask.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PedoDBDataSetProject.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PedoDBDataSetProject.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PedoDBDataSetSubTask.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PedoDBDataSetSubTask.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PedoDBDataSet_GetProjectFinTransBy_PaymentDate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PedoDBDataSet_GetProjectFinTransBy_PaymentDate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\frmDelProject.aspx.cs">
+      <DependentUpon>frmDelProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\frmDelProject.aspx.designer.cs">
+      <DependentUpon>frmDelProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\frmEditProject.aspx.cs">
+      <DependentUpon>frmEditProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\frmEditProject.aspx.designer.cs">
+      <DependentUpon>frmEditProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\frmNewProject.aspx.cs">
+      <DependentUpon>frmNewProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\frmNewProject.aspx.designer.cs">
+      <DependentUpon>frmNewProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\frmNewUmbrellaProject.aspx.cs">
+      <DependentUpon>frmNewUmbrellaProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\frmNewUmbrellaProject.aspx.designer.cs">
+      <DependentUpon>frmNewUmbrellaProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\frmMainTaskReport.aspx.cs">
+      <DependentUpon>frmMainTaskReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\frmMainTaskReport.aspx.designer.cs">
+      <DependentUpon>frmMainTaskReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmSubTaskReport.aspx.cs">
+      <DependentUpon>frmSubTaskReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\frmSubTaskReport.aspx.designer.cs">
+      <DependentUpon>frmSubTaskReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_GetProjectFinTransByPaymentDate.aspx.cs">
+      <DependentUpon>frm_GetProjectFinTransByPaymentDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_GetProjectFinTransByPaymentDate.aspx.designer.cs">
+      <DependentUpon>frm_GetProjectFinTransByPaymentDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProjectReport.aspx.cs">
+      <DependentUpon>ProjectReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ProjectReport.aspx.designer.cs">
+      <DependentUpon>ProjectReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SubTaskForms\frmUpdateSubTask.aspx.cs">
+      <DependentUpon>frmUpdateSubTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubTaskForms\frmUpdateSubTask.aspx.designer.cs">
+      <DependentUpon>frmUpdateSubTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubTaskForms\frmNewSubTask.aspx.cs">
+      <DependentUpon>frmNewSubTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubTaskForms\frmNewSubTask.aspx.designer.cs">
+      <DependentUpon>frmNewSubTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubTaskForms\SolarSubTask.aspx.cs">
+      <DependentUpon>SolarSubTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubTaskForms\SolarSubTask.aspx.designer.cs">
+      <DependentUpon>SolarSubTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForms\formUserRegistration.aspx.cs">
+      <DependentUpon>formUserRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEntryForms\formUserRegistration.aspx.designer.cs">
+      <DependentUpon>formUserRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForms\frmEditUser.aspx.cs">
+      <DependentUpon>frmEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEntryForms\frmEditUser.aspx.designer.cs">
+      <DependentUpon>frmEditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForms\frmTopManagement.aspx.cs">
+      <DependentUpon>frmTopManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEntryForms\frmTopManagement.aspx.designer.cs">
+      <DependentUpon>frmTopManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForms\UserEntryMaster.Master.cs">
+      <DependentUpon>UserEntryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEntryForms\UserEntryMaster.Master.designer.cs">
+      <DependentUpon>UserEntryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntryForms\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEntryForms\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RDLCs\RepAllProjects.rdlc" />
+    <EmbeddedResource Include="RDLCs\RepMainTask.rdlc" />
+    <EmbeddedResource Include="RDLCs\Repo_GetProjectFinTransBy_PaymentDate.rdlc" />
+    <EmbeddedResource Include="RDLCs\RepSubTask.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65409</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65410/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
